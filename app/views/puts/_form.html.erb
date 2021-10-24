@@ -1,0 +1,18 @@
+<%= form_with(model: @put, local: true, url: choose_new_or_edit ) do |form| %>
+  <% if @put.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @put.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <%= @put.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="put_content">
+    <%= form.label :content %><br>
+    <%= form.text_field :content %>
+  </div>
+  <%= form.submit %>
+<% end %>
+<%= link_to "ツイート一覧画面に戻る", puts_path %>

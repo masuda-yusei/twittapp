@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <p>Twitt</p>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </header>
+
+  <body>
+    <%= yield %>
+  </body>
+
+  <footer>
+	  <p>Copyright &copy; 2020 DIC.</p>
+  </footer>
+</html>

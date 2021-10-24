@@ -1,0 +1,17 @@
+<h1>ツイート一覧</h1>
+<p><%= notice %></p>
+<table>
+  <tr>
+    <th>内容</th>
+  </tr>
+<%= @puts.each do |put| %>
+  <tr>
+    <td><%= put.content %></td>
+    <td><%= link_to '詳細を確認する', put_path(put.id) %></td>
+    <td><%= link_to "ツイートを編集する", edit_put_path(put.id), data: { confirm: '本当に編集していいですか？' } %></td>
+    <td><%= link_to 'ツイートを削除する', put_path(put.id), method: :delete ,data: { confirm: '本当に削除していいですか?' } %></td>
+  </tr>
+<% end %>
+</table>
+<br>
+<%= link_to '新しくツイートする', new_put_path %>
